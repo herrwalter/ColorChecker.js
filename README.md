@@ -1,11 +1,10 @@
-
 =====================
 ===ColorChecker.js===
 =====================
 
 Match the colors of the Housestyle with the actual colors in the stylescreen
 
-'<script type="text/javascript" src="path/to/colorchecker.js" ></script>'
+`<script type="text/javascript" src="path/to/colorchecker.js" ></script>`
 
 Add the file to your scripts with all the accepted color codes.
 Then open your browsers console and add the following code:
