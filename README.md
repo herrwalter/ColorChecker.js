@@ -27,3 +27,5 @@ After that you'll see all the colors that didn't match the house style colors yo
 * Create option to show all the elements of the wrong color
 * Create message on 99% that says 'were adding the wrong colors'.
 * Success message when there are no wrong colors. (quite a shame of me to focus on errors.)
+* Search all script files for any color types
+* Rgba() support
