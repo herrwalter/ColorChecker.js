@@ -441,13 +441,11 @@ ColorChecker.prototype.createRgbArray = function( color ){
 ColorChecker.prototype.matchColor = function( element, styleProperty ){
 	var elementStyle = window.getComputedStyle( element );
 	var allRgbCodesInString = this.matchAllRgbCodesInString( elementStyle[styleProperty] );
-	console.log(allRgbCodesInString.length);
 	for( var i = 0; i < allRgbCodesInString.length; i++ ){
 		var rgbArray = this.createRgbArray( allRgbCodesInString[i] );
 		var valid = false;
 			for( var i = 0; i < this.allowedColors.length; i++ ){
 				var allowedColor = this.allowedColors[i];
-				console.log(this.allowedColors);
 				if( rgbArray.join( '' ) === allowedColor.join( '' ) 
 					){
 					return true;
