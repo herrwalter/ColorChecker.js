@@ -338,8 +338,8 @@ ColorChecker.prototype.setColorProperties = function(){
  * @param {Array} colors
  */
 ColorChecker.prototype.setAllowedColors = function( colors ){
-	for( index in colors ){
-		var rgbArray = this.createRgbArray( colors[index] );
+	for( var i = 0; i < colors.length; i++ ){
+		var rgbArray = this.createRgbArray( colors[i] );
 		this.allowedColors.push( rgbArray  );
 	}
 }
@@ -441,12 +441,16 @@ ColorChecker.prototype.createRgbArray = function( color ){
 ColorChecker.prototype.matchColor = function( element, styleProperty ){
 	var elementStyle = window.getComputedStyle( element );
 	var allRgbCodesInString = this.matchAllRgbCodesInString( elementStyle[styleProperty] );
+	console.log(allRgbCodesInString.length);
 	for( var i = 0; i < allRgbCodesInString.length; i++ ){
 		var rgbArray = this.createRgbArray( allRgbCodesInString[i] );
 		var valid = false;
-			for( index in this.allowedColors ){
-				if( rgbArray.join( '' ) === this.allowedColors[index].join( '' ) ){
-					return
+			for( var i = 0; i < this.allowedColors.length; i++ ){
+				var allowedColor = this.allowedColors[i];
+				console.log(this.allowedColors);
+				if( rgbArray.join( '' ) === allowedColor.join( '' ) 
+					){
+					return true;
 				}
 			}
 		var error = {
